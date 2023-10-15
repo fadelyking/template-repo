@@ -4,11 +4,13 @@ module.exports = {
 		commonjs: true,
 		es2021: true,
 	},
+	plugins: ["jest"],
 	extends: ["airbnb-base", "prettier"],
 	overrides: [
 		{
 			env: {
 				node: true,
+				"jest/global": true,
 			},
 			files: [".eslintrc.{js,cjs}"],
 			parserOptions: {
@@ -21,5 +23,10 @@ module.exports = {
 	},
 	rules: {
 		"no-console": "off",
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/prefer-to-have-length": "warn",
+		"jest/valid-expect": "error",
 	},
 };
